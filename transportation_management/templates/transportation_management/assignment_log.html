@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Assignment Log</title>
+    <link rel="stylesheet" href="{% static 'transportation_management/css/assignment_log.css' %}">
+</head>
+<body>
+    <h1>Assignment Log</h1>
+
+    <div class="form-container">
+        <form id="filterForm">
+            <label for="search_plate">Filter by Vehicle Plate:</label>
+            <input type="text" id="search_plate" name="search_plate" oninput="filterLogs()">
+        </form>
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Vehicle Plate</th>
+                    <th>Route Name</th>
+                    <th>Assignment Date</th>
+                </tr>
+            </thead>
+            <tbody id="logTableBody">
+                <!-- Logs will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+
+    <button onclick="window.location.href='/'">Back to Home</button>
+
+    <script src="{% static 'transportation_management/js/log_scripts.js' %}"></script>
+</body>
+</html>

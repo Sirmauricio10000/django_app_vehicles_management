@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Assign Vehicle to Route</title>
+    <link rel="stylesheet" href="{% static 'transportation_management/css/vehicle_assign.css' %}">
+</head>
+<body>
+
+    <h1>Assign Vehicle to Route</h1>
+
+    <div class="form-container">
+        <form id="assignForm">
+            {% csrf_token %}
+            <label for="vehicle">Select Vehicle:</label>
+            <select name="vehicle" id="vehicle" required>
+                <option value="">-- Select a Vehicle --</option>
+            </select>
+    
+            <label for="route">Select Route:</label>
+            <select name="route" id="route" required>
+                <option value="">-- Select a Route --</option>
+            </select>
+    
+            <!-- Botones con clases de estilo -->
+            <button type="button" class="assign-button" onclick="assignVehicle()">Assign Vehicle</button>
+            <button type="button" class="unassign-button" onclick="unassignRoute()">Unassign Route</button> 
+        </form>
+        <div id="resultMessage"></div>
+    </div>
+
+    <div class="tables-container">
+        <div class="table-wrapper">
+            <h2>Vehicle Details</h2>
+            <table id="vehicleDetailsTable">
+                <tr><th>License Plate</th><td id="vehiclePlate">-</td></tr>
+                <tr><th>Type</th><td id="vehicleType">-</td></tr>
+                <tr><th>Status</th><td id="vehicleStatus">-</td></tr>
+                <tr><th>Assigned Route</th><td id="vehicleAssignedRoute">-</td></tr>
+            </table>
+        </div>
+        
+        <div class="table-wrapper">
+            <h2>Route Details</h2>
+            <table id="routeDetailsTable">
+                <tr><th>Name</th><td id="routeName">-</td></tr>
+                <tr><th>Origin</th><td id="routeOrigin">-</td></tr>
+                <tr><th>Destination</th><td id="routeDestination">-</td></tr>
+                <tr><th>Distance</th><td id="routeDistance">-</td></tr>
+                <tr><th>Type</th><td id="routeType">-</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <button class="back-button" onclick="window.location.href='/'">Back to Home</button>
+
+    <!-- Añadir elementos de datos JSON aquí -->
+    <script type="application/json" id="vehicles-data">
+        {{ vehicles|safe }}
+    </script>
+    <script type="application/json" id="routes-data">
+        {{ routes|safe }}
+    </script>
+
+    <script src="{% static 'transportation_management/js/assign.js' %}"></script>
+</body>
+</html>

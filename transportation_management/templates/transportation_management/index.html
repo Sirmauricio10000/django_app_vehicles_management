@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Transportation Management - Home</title>
+    <link rel="stylesheet" href="{% static 'transportation_management/css/index.css' %}">
+</head>
+<body>
+    <div class="button-container">
+        <h1>Transportation Management System</h1>
+        <button onclick="window.location.href='{% url 'vehicle_assign' %}'">Go to Vehicle Assignment</button>
+        <button onclick="window.location.href='{% url 'assignment_log' %}'">Go to Assignment Log</button>
+    </div>
+
+</body>
+</html>

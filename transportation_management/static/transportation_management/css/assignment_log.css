@@ -1,0 +1,116 @@
+/* assignment_log.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado principal */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Contenedor del formulario de filtro */
+.form-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    padding-left: 20px; /* Añadir un poco de espacio a la izquierda */
+    padding-right: 40px; /* Añadir un poco de espacio a la derecha */
+    box-sizing: border-box; /* Asegurar que los padding no excedan el ancho total */
+}
+
+/* Mejoras para el filtro */
+label {
+    font-weight: bold;
+    margin-bottom: 10px; /* Ajuste para espaciar el label del input */
+    display: block;
+    text-align: center;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-top: 5px; /* Margen ajustado para más claridad */
+}
+
+/* Estilos para el contenedor de la tabla */
+.table-wrapper {
+    width: 80%;
+    max-width: 900px; /* Limitar el ancho máximo de la tabla */
+    margin: 20px auto; /* Centrar la tabla horizontalmente */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-x: auto;
+    padding: 15px;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    width: 200px; /* Ancho fijo para celdas */
+    font-size: 14px; /* Tamaño de fuente ajustado */
+}
+
+/* Encabezado de la tabla */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Colores alternos para las filas */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Botón de "Back to Home" */
+button {
+    padding: 10px 20px;
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: block; /* Hace que el botón ocupe su propio espacio */
+    margin: 20px auto; /* Centrar el botón en la parte inferior */
+    width: auto; /* Ancho automático */
+    min-width: 120px;
+}
+
+button:hover {
+    background-color: #e5533d;
+}
+
+/* Asegura que el contenido empuje hacia arriba el pie de página si es necesario */
+body > * {
+    flex: 1 0 auto;
+}
