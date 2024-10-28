@@ -49,8 +49,8 @@ class AssignmentLogViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 def vehicle_assign_view(request):
-    vehicles = list(Vehicle.objects.values('id', 'license_plate', 'vehicle_type', 'status', 'route_id'))  # Asegúrate de incluir el nombre correcto del campo
-    routes = list(Route.objects.values('id', 'name', 'origin', 'destination', 'distance', 'route_type'))  # Obtener todas las rutas
+    vehicles = list(Vehicle.objects.values('id', 'license_plate', 'vehicle_type', 'status', 'route_id'))  
+    routes = list(Route.objects.values('id', 'name', 'origin', 'destination', 'distance', 'route_type'))  
 
     # Convertir objetos UUID y Decimal a cadenas para asegurar JSON válido
     for vehicle in vehicles:
